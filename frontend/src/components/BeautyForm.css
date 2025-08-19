@@ -1,0 +1,624 @@
+.beauty-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 9, 9, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.beauty-login-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  margin: 20px;
+  background: linear-gradient(135deg,
+      rgba(196, 80, 119, 0.98) 0%,
+      rgba(76, 117, 199, 0.98) 50%,
+      rgba(49, 221, 164, 0.98) 100%);
+  border: 1px solid rgba(231, 118, 118, 0.6);
+  backdrop-filter: blur(8px);
+  color: #556;
+}
+
+.beauty-login-card.light {
+  background: linear-gradient(135deg,
+      rgba(243, 211, 227, 0.98) 0%,
+      rgba(238, 196, 180, 0.98) 50%,
+      rgba(181, 245, 213, 0.98) 100%);
+  color: #556;
+}
+
+.beauty-login-card.dark {
+  background: linear-gradient(135deg,
+      rgba(50, 40, 60, 0.95) 0%,
+      rgba(40, 50, 70, 0.95) 50%,
+      rgba(40, 60, 50, 0.95) 100%);
+  color: #e0e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.beauty-login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.beauty-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.beauty-logo-icon {
+  font-size: 1.5rem;
+  margin-right: .5rem;
+  color: #8a7fd1;
+}
+
+.dark .beauty-logo-icon {
+  color: #a991f1;
+}
+
+.beauty-login-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #5a67d8;
+}
+
+.dark .beauty-login-header h1 {
+  color: #9f7aea;
+}
+
+.beauty-login-header h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: .5rem 0 .25rem;
+  color: #4a5568;
+}
+
+.dark .beauty-login-header h2 {
+  color: #cbd5e0;
+}
+
+.beauty-login-header p {
+  font-size: .875rem;
+  color: #718096;
+  margin: 0;
+}
+
+.dark .beauty-login-header p {
+  color: #a0aec0;
+}
+
+.beauty-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #a0aec0;
+  padding: .25rem;
+  transition: all 0.2s;
+}
+
+.beauty-close-button:hover {
+  color: #718096;
+}
+
+.dark .beauty-close-button {
+  color: #a0aec0;
+}
+
+.dark .beauty-close-button:hover {
+  color: #e2e8f0;
+}
+
+.beauty-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.beauty-form-group {
+  position: relative;
+}
+
+.beauty-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.beauty-input-icon {
+  position: absolute;
+  left: .75rem;
+  color: #a0aec0;
+  z-index: 1;
+}
+
+.dark .beauty-input-icon {
+  color: #718096;
+}
+
+.beauty-input {
+  width: 100%;
+  padding: .75rem .75rem .75rem 2.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: .5rem;
+  font-size: .875rem;
+  transition: all .2s ease;
+  background: rgba(255, 255, 255, 0.7);
+  color: #4a5568;
+}
+
+.dark .beauty-input {
+  background: rgba(26, 32, 44, 0.7);
+  border-color: #4a5568;
+  color: #7badce;
+}
+
+.beauty-input:focus {
+  outline: none;
+  border-color: #a3bffa;
+  box-shadow: 0 0 0 2px rgba(163, 191, 250, 0.2);
+  background: rgba(245, 230, 230, 0.9);
+}
+
+.dark .beauty-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+  background: rgba(26, 32, 44, 0.9);
+}
+
+.beauty-input-container select.beauty-input {
+  appearance: none;
+  padding-right: 2rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0aec0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat right .75rem center/12px, rgba(255, 255, 255, 0.7);
+}
+
+.dark .beauty-input-container select.beauty-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23718096' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"), rgba(26, 32, 44, 0.7);
+}
+
+.beauty-password-toggle {
+  position: absolute;
+  right: .75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a0aec0;
+  padding: 0;
+}
+
+.dark .beauty-password-toggle {
+  color: #718096;
+}
+
+.beauty-error-message {
+  display: block;
+  font-size: .75rem;
+  color: #e53e3e;
+  margin-top: .25rem;
+}
+
+.dark .beauty-error-message {
+  color: #fc8181;
+}
+
+.has-error .beauty-input {
+  border-color: #e53e3e;
+}
+
+.dark .has-error .beauty-input {
+  border-color: #fc8181;
+}
+
+.beauty-form-actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.beauty-submit-button,
+.beauty-cancel-button {
+  flex: 1;
+  padding: .75rem;
+  border: none;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.beauty-submit-button {
+  background:linear-gradient(to right, #FF7EAA, #C97AFF, #FF9E7A);
+  color: white;
+  box-shadow: 0 2px 4px rgba(127, 156, 245, 0.2);
+}
+
+.beauty-submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.beauty-submit-button:disabled {
+  background:linear-gradient(to right, #FF7EAA, #C97AFF, #FF9E7A);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.beauty-cancel-button {
+  background:linear-gradient(to right, #FF7EAA, #C97AFF, #FF9E7A);
+  color: white;
+  box-shadow: 0 2px 4px rgba(127, 156, 245, 0.2);
+}
+
+.beauty-cancel-button:hover {
+  transform: translateY(-2px);
+}
+
+.dark .beauty-cancel-button {
+  background: rgba(26, 32, 44, 0.7);
+  color: #e2e8f0;
+  border: 1px solid #4a5568;
+}
+
+.dark .beauty-cancel-button:hover {
+  background: rgba(26, 32, 44, 0.9);
+}
+
+.beauty-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.beauty-social-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.25rem 0;
+  color: #a0aec0;
+  font-size: .875rem;
+}
+
+.beauty-social-divider::before,
+.beauty-social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.beauty-social-divider::before {
+  margin-right: 1rem;
+}
+
+.beauty-social-divider::after {
+  margin-left: 1rem;
+}
+
+.dark .beauty-social-divider::before,
+.dark .beauty-social-divider::after {
+  border-color: #4a5568;
+}
+
+.beauty-social-buttons {
+  display: flex;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.beauty-social-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: .5rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: #4a5568;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.beauty-social-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.dark .beauty-social-button {
+  background: rgba(26, 32, 44, 0.7);
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark .beauty-social-button:hover {
+  background: rgba(26, 32, 44, 0.9);
+}
+
+.beauty-social-icon {
+  font-size: 1.125rem;
+}
+
+.beauty-form-footer {
+  text-align: center;
+  font-size: .875rem;
+  color: #718096;
+}
+
+.beauty-text-button {
+  background: none;
+  border: none;
+  color: #f88ad7;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.beauty-text-button:hover {
+  text-decoration: underline;
+  color: #d8a4f7;
+}
+
+.dark .beauty-text-button {
+  color: #9f7aea;
+}
+
+.dark .beauty-text-button:hover {
+  color: #805ad5;
+}
+
+.beauty-input::placeholder {
+  color: #90b9f0;
+  opacity: 1;
+}
+
+.dark .beauty-input::placeholder {
+  color: #718096;
+}
+
+@media (max-height: 600px) {
+  .beauty-login-card {
+    max-height: 85vh;
+    padding: 24px;
+  }
+}
+
+.beauty-error-modal-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.beauty-error-modal {
+  background: white;
+  color: #333;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+  position: relative !important;
+  z-index: 10000 !important;
+  margin: auto;
+}
+
+.dark .beauty-error-modal {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.beauty-modal-ok-button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #f56565;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.beauty-modal-ok-button:hover {
+  background-color: #e53e3e;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Account link styles */
+.beauty-account-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.beauty-account-link p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.dark .beauty-account-link p {
+  color: #cbd5e0;
+}
+
+.beauty-link-button {
+ background:linear-gradient(to right, #FF7EAA, #C97AFF, #FF9E7A);
+  color: white;
+  box-shadow: 0 2px 4px rgba(127, 156, 245, 0.2);
+  border: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(124, 146, 247, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.beauty-link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.beauty-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.beauty-link-button:hover::before {
+  left: 100%;
+}
+
+.beauty-link-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.beauty-link-button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.dark .beauty-link-button {
+  background: linear-gradient(135deg, #9f7aea 0%, #b794f4 100%);
+  box-shadow: 0 2px 8px rgba(159, 122, 234, 0.3);
+}
+
+.dark .beauty-link-button:hover {
+  background: linear-gradient(135deg, #805ad5 0%, #9f7aea 100%);
+  box-shadow: 0 4px 12px rgba(159, 122, 234, 0.4);
+}
+
+.dark .beauty-link-button:disabled {
+  background: #718096;
+}
+
+
+/* Main overlay for the entire modal (necessary for centering) */
+.beauty-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* General modal container */
+.beauty-modal {
+  background-color: var(--card-bg-color);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Specific styling for the success modal */
+.beauty-success-modal {
+  animation: fadeInScale 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  background: linear-gradient(to right, #FF7EAA, #C97AFF, #FF9E7A);
+}
+
+.beauty-success-modal .beauty-success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.beauty-success-modal .beauty-success-content h3 {
+  color: #4CAF50;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.beauty-success-modal .beauty-success-content p {
+  color: var(--text-color-secondary);
+  margin: 0;
+}
+
+/* Animation for the modal pop-up */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode adjustments for the modal */
+.beauty-modal.dark {
+  background-color: #2c2f33;
+}
